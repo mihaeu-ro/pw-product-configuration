@@ -1,5 +1,9 @@
 # PW Exercise 2 - Product Configuration
 
+[![Build Status](https://travis-ci.org/mihaeu/pw-product-configuration.svg?branch=develop)](https://travis-ci.org/mihaeu/pw-product-configuration)
+[![Coverage Status](https://coveralls.io/repos/mihaeu/pw-product-configuration/badge.svg?branch=develop&service=github)](https://coveralls.io/github/mihaeu/pw-product-configuration?branch=develop)
+![PHP v7](https://img.shields.io/badge/PHP-%3E%3D7-blue.svg)
+
 ## Requirements (by [Stefan Priebsch](https://thephp.cc/company/consultants/stefan-priebsch))
 
 Erstellen sie die Geschäftslogik für einen Produktkonfigurator.
