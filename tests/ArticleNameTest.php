@@ -1,19 +1,21 @@
 <?php declare(strict_types = 1);
 
+namespace Mihaeu\ProductConfigurator;
+
 /**
  * @covers ArticleName
  */
-class ArticleNameTest extends PHPUnit_Framework_TestCase
+class ArticleNameTest extends \PHPUnit_Framework_TestCase
 {
     public function testCannotBeEmpty()
     {
-        $this->setExpectedException(InvalidArgumentException::class);
+        $this->setExpectedException(\InvalidArgumentException::class);
         new ArticleName('');
     }
 
     public function testCannotBeLongerThan255Characters()
     {
-        $this->setExpectedException(InvalidArgumentException::class);
+        $this->setExpectedException(\InvalidArgumentException::class);
         new ArticleName(str_repeat('.', 256));
     }
 

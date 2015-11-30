@@ -1,11 +1,13 @@
-<?php
+<?php declare(strict_types = 1);
+
+namespace Mihaeu\ProductConfigurator;
 
 /**
  * @covers Option
  * @uses Money
  * @uses Currency
  */
-class OptionTest extends PHPUnit_Framework_TestCase
+class OptionTest extends \PHPUnit_Framework_TestCase
 {
     use CreateMoneyTrait;
 

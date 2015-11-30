@@ -1,5 +1,7 @@
 <?php declare(strict_types = 1);
 
+namespace Mihaeu\ProductConfigurator;
+
 class Money
 {
     /**
@@ -47,7 +49,7 @@ class Money
     private function ensureCurrenciesMatch(Currency $myCurrency, Currency $yourCurrency)
     {
         if (!$myCurrency->equals($yourCurrency)) {
-            throw new InvalidArgumentException('Currency mismatch');
+            throw new \InvalidArgumentException('Currency mismatch');
         }
     }
 

@@ -1,4 +1,6 @@
-<?php
+<?php declare(strict_types = 1);
+
+namespace Mihaeu\ProductConfigurator;
 
 /**
  * @covers ArticleWithOneOption
@@ -8,7 +10,7 @@
  * @uses ArticleName
  * @uses UId
  */
-class ArticleWithOneOptionTest extends PHPUnit_Framework_TestCase
+class ArticleWithOneOptionTest extends \PHPUnit_Framework_TestCase
 {
     use CreateMoneyTrait;
 
@@ -47,7 +49,7 @@ class ArticleWithOneOptionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return PHPUnit_Framework_MockObject_MockObject|Option
+     * @return \PHPUnit_Framework_MockObject_MockObject|Option
      */
     private function createOption()
     {

@@ -1,4 +1,6 @@
-<?php
+<?php declare(strict_types = 1);
+
+namespace Mihaeu\ProductConfigurator;
 
 /**
  * @covers ArticleWithMultipleOptions
@@ -8,7 +10,7 @@
  * @uses ArticleName
  * @uses UId
  */
-class ArticleWithMultipleOptionsTest extends PHPUnit_Framework_TestCase
+class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
 {
     use CreateMoneyTrait;
 
@@ -105,7 +107,7 @@ class ArticleWithMultipleOptionsTest extends PHPUnit_Framework_TestCase
             $option1
         );
 
-        $this->setExpectedExceptionRegExp(InvalidArgumentException::class, '/Article does not .*/');
+        $this->setExpectedExceptionRegExp(\InvalidArgumentException::class, '/Article does not .*/');
         $article->addOption($option2);
         $article->addOption($option3);
         $article->addOption($option4);
@@ -120,12 +122,12 @@ class ArticleWithMultipleOptionsTest extends PHPUnit_Framework_TestCase
             $option
         );
 
-        $this->setExpectedExceptionRegExp(InvalidArgumentException::class, '/Option has already been added./');
+        $this->setExpectedExceptionRegExp(\InvalidArgumentException::class, '/Option has already been added./');
         $article->addOption($option);
     }
 
     /**
-     * @return PHPUnit_Framework_MockObject_MockObject|Option
+     * @return \PHPUnit_Framework_MockObject_MockObject|Option
      */
     private function createOption()
     {

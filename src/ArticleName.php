@@ -1,5 +1,7 @@
 <?php declare(strict_types = 1);
 
+namespace Mihaeu\ProductConfigurator;
+
 class ArticleName
 {
     /** @var string */
@@ -8,11 +10,11 @@ class ArticleName
     public function __construct(string $name)
     {
         if (empty($name)) {
-            throw new InvalidArgumentException('Article name cannot be empty.');
+            throw new \InvalidArgumentException('Article name cannot be empty.');
         }
 
         if (strlen($name) > 255) {
-            throw new InvalidArgumentException('Maximum length for article name is 255.');
+            throw new \InvalidArgumentException('Maximum length for article name is 255.');
         }
 
         $this->name = $name;

@@ -1,10 +1,12 @@
-<?php
+<?php declare(strict_types = 1);
+
+namespace Mihaeu\ProductConfigurator;
 
 /**
  * @covers Money
  * @uses Currency
  */
-class MoneyTest extends PHPUnit_Framework_TestCase
+class MoneyTest extends \PHPUnit_Framework_TestCase
 {
     use CreateMoneyTrait;
     use CreateUsdTrait;
@@ -25,7 +27,7 @@ class MoneyTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Currency mismatch
      */
     public function testWillNotAddDifferentCurrencies()

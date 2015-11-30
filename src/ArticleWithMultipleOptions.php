@@ -1,5 +1,7 @@
 <?php declare(strict_types = 1);
 
+namespace Mihaeu\ProductConfigurator;
+
 class ArticleWithMultipleOptions extends Article
 {
     const MAX_OPTIONS = 3;
@@ -45,14 +47,14 @@ class ArticleWithMultipleOptions extends Article
     private function ensureOptionIsNotAlreadyPresent($option)
     {
         if (in_array($option, $this->options)) {
-            throw new InvalidArgumentException('Option has already been added.');
+            throw new \InvalidArgumentException('Option has already been added.');
         }
     }
 
     private function ensureMaximumNumberOfOptionsIsNotExceeded()
     {
         if (count($this->options) >= self::MAX_OPTIONS) {
-            throw new InvalidArgumentException('Article does not allow for more than three options.');
+            throw new \InvalidArgumentException('Article does not allow for more than three options.');
         }
     }
 

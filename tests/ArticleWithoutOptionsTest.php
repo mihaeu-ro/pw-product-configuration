@@ -1,4 +1,6 @@
-<?php
+<?php declare(strict_types = 1);
+
+namespace Mihaeu\ProductConfigurator;
 
 /**
  * @covers ArticleWithoutOptions
@@ -8,7 +10,7 @@
  * @uses ArticleName
  * @uses UId
  */
-class ArticleWithoutOptionsTest extends PHPUnit_Framework_TestCase
+class ArticleWithoutOptionsTest extends \PHPUnit_Framework_TestCase
 {
     public function testTotalPriceCanBeRetrieved()
     {

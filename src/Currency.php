@@ -1,5 +1,7 @@
 <?php declare(strict_types = 1);
 
+namespace Mihaeu\ProductConfigurator;
+
 class Currency
 {
     /**
@@ -46,7 +48,7 @@ class Currency
     private function ensureCurrencyIsSupported($currency)
     {
         if (!in_array($currency, $this->supportedCurrencies)) {
-            throw new InvalidArgumentException('Unsupported currency');
+            throw new \InvalidArgumentException('Unsupported currency');
         }
     }
 

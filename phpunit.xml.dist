@@ -11,9 +11,9 @@
     <directory suffix="Test.php">tests</directory>
   </testsuite>
 
-  <logging>
-    <log type="coverage-html" target="build/coverage"/>
-  </logging>
+  <!--<logging>-->
+    <!--<log type="coverage-html" target="build/coverage"/>-->
+  <!--</logging>-->
 
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">

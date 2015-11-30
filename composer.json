@@ -1,5 +1,5 @@
 {
-    "name": "mihaeu-ro/product-configurator",
+    "name": "mihaeu/product-configurator",
     "authors": [
         {
             "name": "Michael Haeuslmann",
@@ -10,6 +10,6 @@
         "phpunit/phpunit": "^5.0"
     },
     "autoload": {
-        "classmap": ["src/", "tests/"]
+        "psr-4": { "Mihaeu\\ProductConfigurator\\": ["src/", "tests/"]}
     }
 }

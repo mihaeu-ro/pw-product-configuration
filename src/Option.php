@@ -1,5 +1,7 @@
 <?php declare(strict_types = 1);
 
+namespace Mihaeu\ProductConfigurator;
+
 class Option
 {
     /**

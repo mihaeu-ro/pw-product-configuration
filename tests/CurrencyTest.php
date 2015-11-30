@@ -1,9 +1,11 @@
-<?php
+<?php declare(strict_types = 1);
+
+namespace Mihaeu\ProductConfigurator;
 
 /**
  * @covers Currency
  */
-class CurrencyTest extends PHPUnit_Framework_TestCase
+class CurrencyTest extends \PHPUnit_Framework_TestCase
 {
     use CreateUsdTrait;
 
@@ -13,7 +15,7 @@ class CurrencyTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Unsupported currency
      */
     public function testDoesNotSupportNonEurCurrency()
