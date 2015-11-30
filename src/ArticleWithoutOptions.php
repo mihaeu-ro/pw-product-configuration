@@ -6,4 +6,10 @@ class ArticleWithoutOptions extends Article
     {
         return $this->basePrice();
     }
+
+    public function __toString() : string
+    {
+        return 'base: '.$this->basePrice().PHP_EOL
+            .'total: '.$this->totalPrice();
+    }
 }

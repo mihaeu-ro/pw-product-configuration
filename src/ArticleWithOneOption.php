@@ -30,4 +30,11 @@ class ArticleWithOneOption extends Article
     {
         return $this->basePrice()->addTo($this->option->price());
     }
+
+    public function __toString() : string
+    {
+        return 'base: '.$this->basePrice().PHP_EOL.
+            'option: '.$this->getOption()->__toString().PHP_EOL.
+            'total: '.$this->totalPrice();
+    }
 }

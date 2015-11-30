@@ -27,7 +27,7 @@ Dabei gelten die folgenden Geschäftsregeln:
 ✗ es kann pro Geschäftsvorgang nur ein einziger Artikel gekauft
   werden
 
-✗ für den zu kaufenden Artikel müssen sowohl der Basispreis
+✓ für den zu kaufenden Artikel müssen sowohl der Basispreis
   des Artikels als auch der Gesamtpreis inklusive aller
   gewählten Optionen angezeigt werden
 

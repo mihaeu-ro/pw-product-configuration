@@ -52,4 +52,14 @@ class ArticleWithMultipleOptions extends Article
             // @todo
         }
     }
+
+    public function __toString() : string
+    {
+        $output = 'base: '.$this->basePrice();
+        for ($i = 0; $i < count($this->options); ++$i) {
+            $output .= PHP_EOL.'option'.($i + 1).': '.$this->options[$i];
+        }
+        $output .= PHP_EOL.'total: '.$this->totalPrice();
+        return $output;
+    }
 }

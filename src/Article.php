@@ -51,4 +51,9 @@ abstract class Article
      * @return Money
      */
     abstract public function totalPrice() :Money;
+
+    /**
+     * @return string
+     */
+    abstract public function __toString() : string;
 }

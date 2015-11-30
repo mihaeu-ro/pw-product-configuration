@@ -55,4 +55,19 @@ class ArticleWithOneOptionTest extends PHPUnit_Framework_TestCase
                        ->disableOriginalConstructor()
                        ->getMock();
     }
+
+    public function testPrintsDetails()
+    {
+        $optionPrice = new Money(2, new Currency('EUR'));
+        $basePrice = new Money(5, new Currency('EUR'));
+
+        $option = $this->createOption();
+        $option->method('price')->willReturn($optionPrice);
+        $option->method('__toString')->willReturn($optionPrice);
+
+        $article = new ArticleWithOneOption(new ArticleName('Test Article'), $basePrice);
+        $article->setOption($option);
+
+        $this->assertEquals('base: 5EUR'.PHP_EOL.'option: 2EUR'.PHP_EOL.'total: 7EUR', $article->__toString());
+    }
 }

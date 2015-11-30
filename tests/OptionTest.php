@@ -17,4 +17,11 @@ class OptionTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue($price->equals($option->price()));
     }
+
+    public function testPrintsPrice()
+    {
+        $price = $this->createMoney();
+        $option = new Option($price);
+        $this->assertEquals($price->__toString(), $option->__toString());
+    }
 }

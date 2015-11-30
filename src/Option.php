@@ -22,4 +22,9 @@ class Option
     {
         return $this->price;
     }
+
+    public function __toString() : string
+    {
+        return $this->price->__toString();
+    }
 }
