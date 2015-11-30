@@ -1,33 +1,35 @@
 # PW Exercise 2 - Product Configuration
 
-> Erstellen sie die Geschäftslogik für einen Produktkonfigurator.
-> Dabei gelten die folgenden Geschäftsregeln:
+## Requirements (by [Stefan Priebsch](https://thephp.cc/company/consultants/stefan-priebsch))
 
-> * Artikel werden durch eine eindeutige ID identifiziert und
->   haben einen Namen
+Erstellen sie die Geschäftslogik für einen Produktkonfigurator.
+Dabei gelten die folgenden Geschäftsregeln:
 
-> * beim Kauf von bestimmten Artikeln können verschiedene Optionen
->   hinzugewählt werden
+✗ Artikel werden durch eine eindeutige ID identifiziert und
+  haben einen Namen
 
-> * es gibt drei verschiedene Arten von Artikeln: Artikel ohne
->   Optionen, Artikel mit maximal einer Option und Artikel mit
->   mindestens einer und höchstens drei Optionen
+✗ beim Kauf von bestimmten Artikeln können verschiedene Optionen
+  hinzugewählt werden
 
-> * bestimmte Optionen sind nicht miteinander kombinierbar
+✓ es gibt drei verschiedene Arten von Artikeln: Artikel ohne
+  Optionen, Artikel mit maximal einer Option und Artikel mit
+  mindestens einer und höchstens drei Optionen
 
-> * normalerweise sind Optionen jeweils nur auf bestimmte Artikel
->   anwendbar; bestimmte Optionen wie Garantieverlängerungen oder
->   Zusatzleistungen können jedoch auf alle Artikel angewendet
->   werden, sofern diese generell Optionen zulassen
+✗ bestimmte Optionen sind nicht miteinander kombinierbar
 
-> * jeder Artikel und jede Option haben einen Preis
+✗ normalerweise sind Optionen jeweils nur auf bestimmte Artikel
+  anwendbar; bestimmte Optionen wie Garantieverlängerungen oder
+  Zusatzleistungen können jedoch auf alle Artikel angewendet
+  werden, sofern diese generell Optionen zulassen
 
-> * es kann pro Geschäftsvorgang nur ein einziger Artikel gekauft
+✓ jeder Artikel und jede Option haben einen Preis
+
+ es kann pro Geschäftsvorgang nur ein einziger Artikel gekauft
   werden
 
-> * für den zu kaufenden Artikel müssen sowohl der Basispreis
->   des Artikels als auch der Gesamtpreis inklusive aller
->   gewählten Optionen angezeigt werden
+✗ für den zu kaufenden Artikel müssen sowohl der Basispreis
+  des Artikels als auch der Gesamtpreis inklusive aller
+  gewählten Optionen angezeigt werden
 
 ## Getting started
 
