@@ -50,4 +50,9 @@ class Money
             throw new InvalidArgumentException('Currency mismatch');
         }
     }
+
+    public function __toString() : string
+    {
+        return $this->amount.$this->currency;
+    }
 }

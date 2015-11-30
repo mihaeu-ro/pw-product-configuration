@@ -5,6 +5,8 @@
  * @covers Article
  * @uses Money
  * @uses Currency
+ * @uses ArticleName
+ * @uses UId
  */
 class ArticleWithoutOptionsTest extends PHPUnit_Framework_TestCase
 {
@@ -12,7 +14,7 @@ class ArticleWithoutOptionsTest extends PHPUnit_Framework_TestCase
     {
         $price = new Money(1, new Currency('EUR'));
 
-        $article = new ArticleWithoutOptions($price);
+        $article = new ArticleWithoutOptions(new ArticleName('Test Article'), $price);
 
         $this->assertSame($price, $article->totalPrice());
     }

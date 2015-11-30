@@ -49,4 +49,9 @@ class Currency
             throw new InvalidArgumentException('Unsupported currency');
         }
     }
+
+    public function __toString() : string
+    {
+        return $this->currency;
+    }
 }

@@ -18,12 +18,23 @@ abstract class Article
     private $uid;
 
     /**
+     * @param ArticleName $name
      * @param Money $basePrice
      */
     public function __construct(ArticleName $name, Money $basePrice)
     {
         $this->name = $name;
         $this->basePrice = $basePrice;
+
+        $this->uid = new UId([$name, $basePrice]);
+    }
+
+    /**
+     * @return UId
+     */
+    public function uid() : UId
+    {
+        return $this->uid;
     }
 
     /**

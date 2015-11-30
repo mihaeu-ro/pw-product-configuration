@@ -5,6 +5,8 @@
  * @covers Article
  * @uses Money
  * @uses Currency
+ * @uses ArticleName
+ * @uses UId
  */
 class ArticleWithOneOptionTest extends PHPUnit_Framework_TestCase
 {
@@ -13,7 +15,7 @@ class ArticleWithOneOptionTest extends PHPUnit_Framework_TestCase
     public function testBasePriceCanBeRetrieved()
     {
         $price = new Money(1, new Currency('EUR'));
-        $article = new ArticleWithOneOption($price);
+        $article = new ArticleWithOneOption(new ArticleName('Test Article'), $price);
 
         $this->assertTrue($price->equals($article->basePrice()));
     }
@@ -24,7 +26,7 @@ class ArticleWithOneOptionTest extends PHPUnit_Framework_TestCase
 
         $option = $this->createOption();
 
-        $article = new ArticleWithOneOption($price);
+        $article = new ArticleWithOneOption(new ArticleName('Test Article'), $price);
         $article->setOption($option);
 
         $this->assertSame($option, $article->getOption());
@@ -38,7 +40,7 @@ class ArticleWithOneOptionTest extends PHPUnit_Framework_TestCase
         $option = $this->createOption();
         $option->method('price')->willReturn($optionPrice);
 
-        $article = new ArticleWithOneOption($basePrice);
+        $article = new ArticleWithOneOption(new ArticleName('Test Article'), $basePrice);
         $article->setOption($option);
 
         $this->assertTrue($basePrice->addTo($optionPrice)->equals($article->totalPrice()));

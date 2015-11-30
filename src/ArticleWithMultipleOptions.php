@@ -8,12 +8,13 @@ class ArticleWithMultipleOptions extends Article
     private $options = [];
 
     /**
-     * @param Money  $basePrice
+     * @param ArticleName $name
+     * @param Money $basePrice
      * @param Option $option
      */
-    public function __construct(Money $basePrice, Option $option)
+    public function __construct(ArticleName $name, Money $basePrice, Option $option)
     {
-        parent::__construct($basePrice);
+        parent::__construct($name, $basePrice);
 
         $this->options[] = $option;
     }
