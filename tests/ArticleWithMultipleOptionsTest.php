@@ -89,6 +89,41 @@ class ArticleWithMultipleOptionsTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    public function testDoesNotAcceptMoreThanThreeOptions()
+    {
+        $option1 = $this->createOption();
+        $option1->method('price')->willReturn(new Money(1, new Currency('EUR')));
+        $option2 = $this->createOption();
+        $option2->method('price')->willReturn(new Money(2, new Currency('EUR')));
+        $option3 = $this->createOption();
+        $option3->method('price')->willReturn(new Money(3, new Currency('EUR')));
+        $option4 = $this->createOption();
+        $option4->method('price')->willReturn(new Money(4, new Currency('EUR')));
+        $article = new ArticleWithMultipleOptions(
+            new ArticleName('Test'),
+            new Money(1, new Currency('EUR')),
+            $option1
+        );
+
+        $this->setExpectedExceptionRegExp(InvalidArgumentException::class, '/Article does not .*/');
+        $article->addOption($option2);
+        $article->addOption($option3);
+        $article->addOption($option4);
+    }
+
+    public function testDoesNotAllowSameOptionTwice()
+    {
+        $option = $this->createOption();
+        $article = new ArticleWithMultipleOptions(
+            new ArticleName('Test'),
+            new Money(1, new Currency('EUR')),
+            $option
+        );
+
+        $this->setExpectedExceptionRegExp(InvalidArgumentException::class, '/Option has already been added./');
+        $article->addOption($option);
+    }
+
     /**
      * @return PHPUnit_Framework_MockObject_MockObject|Option
      */

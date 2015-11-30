@@ -12,7 +12,7 @@ Dabei gelten die folgenden Geschäftsregeln:
 ✓ Artikel werden durch eine eindeutige ID identifiziert und
   haben einen Namen
 
-✗ beim Kauf von bestimmten Artikeln können verschiedene Optionen
+✓ beim Kauf von bestimmten Artikeln können verschiedene Optionen
   hinzugewählt werden
 
 ✓ es gibt drei verschiedene Arten von Artikeln: Artikel ohne

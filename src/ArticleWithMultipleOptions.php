@@ -2,6 +2,7 @@
 
 class ArticleWithMultipleOptions extends Article
 {
+    const MAX_OPTIONS = 3;
     /**
      * @var Option[]
      */
@@ -43,13 +44,15 @@ class ArticleWithMultipleOptions extends Article
 
     private function ensureOptionIsNotAlreadyPresent($option)
     {
-        // @todo
+        if (in_array($option, $this->options)) {
+            throw new InvalidArgumentException('Option has already been added.');
+        }
     }
 
     private function ensureMaximumNumberOfOptionsIsNotExceeded()
     {
-        if (count($this->options) == 2) {
-            // @todo
+        if (count($this->options) >= self::MAX_OPTIONS) {
+            throw new InvalidArgumentException('Article does not allow for more than three options.');
         }
     }
 
