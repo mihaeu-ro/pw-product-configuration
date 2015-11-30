@@ -9,6 +9,6 @@ class UIdTest extends PHPUnit_Framework_TestCase
     {
         $uidA = new UId(['test']);
         $uidB = new UId(['test']);
-        $this->assertNotEquals($uidA->uid(), $uidB->uid());
+        $this->assertNotSame($uidA, $uidB);
     }
 }

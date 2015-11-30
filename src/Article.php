@@ -8,10 +8,21 @@ abstract class Article
     private $basePrice;
 
     /**
+     * @var ArticleName
+     */
+    private $name;
+
+    /**
+     * @var UId
+     */
+    private $uid;
+
+    /**
      * @param Money $basePrice
      */
-    public function __construct(Money $basePrice)
+    public function __construct(ArticleName $name, Money $basePrice)
     {
+        $this->name = $name;
         $this->basePrice = $basePrice;
     }
 

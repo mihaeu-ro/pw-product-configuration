@@ -15,7 +15,7 @@ class UId
         $this->uid = sha1($tmp.rand(0, 100).microtime());
     }
 
-    public function uid() : string
+    public function __toString() : string
     {
         return $this->uid;
     }
