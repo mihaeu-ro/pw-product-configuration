@@ -1,0 +1,12 @@
+{
+    "name": "mihaeu-ro/product-configurator",
+    "authors": [
+        {
+            "name": "Michael Haeuslmann",
+            "email": "haeuslmann@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^5.0"
+    }
+}
