@@ -39,7 +39,7 @@ Dabei gelten die folgenden Geschäftsregeln:
 
 ```bash
 # fetch repo
-git clone https://github.com/mihaeu-ro/pw-product-configuration
+git clone https://github.com/mihaeu/pw-product-configuration
 cd pw-product-configuration
 
 # download local composer
