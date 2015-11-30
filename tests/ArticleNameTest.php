@@ -22,4 +22,9 @@ class ArticleNameTest extends PHPUnit_Framework_TestCase
         $name = new ArticleName('stuff');
         $this->assertEquals('stuff', $name);
     }
+
+    public function testConvertsToString()
+    {
+        $this->assertEquals('test', new ArticleName('test'));
+    }
 }

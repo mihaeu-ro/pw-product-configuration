@@ -5,7 +5,7 @@
 Erstellen sie die Geschäftslogik für einen Produktkonfigurator.
 Dabei gelten die folgenden Geschäftsregeln:
 
-✗ Artikel werden durch eine eindeutige ID identifiziert und
+✓ Artikel werden durch eine eindeutige ID identifiziert und
   haben einen Namen
 
 ✗ beim Kauf von bestimmten Artikeln können verschiedene Optionen
@@ -24,7 +24,7 @@ Dabei gelten die folgenden Geschäftsregeln:
 
 ✓ jeder Artikel und jede Option haben einen Preis
 
- es kann pro Geschäftsvorgang nur ein einziger Artikel gekauft
+✗ es kann pro Geschäftsvorgang nur ein einziger Artikel gekauft
   werden
 
 ✗ für den zu kaufenden Artikel müssen sowohl der Basispreis

@@ -70,5 +70,10 @@ class MoneyTest extends PHPUnit_Framework_TestCase
 
         $this->assertFalse($eur->equals($usd));
     }
+
+    public function testConvertsToString()
+    {
+        $this->assertEquals('1EUR', new Money(1, new Currency('EUR')));
+    }
 }
 

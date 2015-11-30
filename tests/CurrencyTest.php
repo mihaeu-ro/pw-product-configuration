@@ -43,4 +43,9 @@ class CurrencyTest extends PHPUnit_Framework_TestCase
 
         $this->assertFalse($eur->equals($this->createUsd()));
     }
+
+    public function testConvertsToString()
+    {
+        $this->assertEquals('EUR', new Currency('EUR'));
+    }
 }

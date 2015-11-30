@@ -15,6 +15,11 @@ class UId
         $this->uid = sha1($tmp.rand(0, 100).microtime());
     }
 
+    /**
+     * @codeCoverageIgnore
+     *
+     * @return string
+     */
     public function __toString() : string
     {
         return $this->uid;

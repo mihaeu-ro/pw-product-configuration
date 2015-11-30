@@ -30,6 +30,8 @@ abstract class Article
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @return UId
      */
     public function uid() : UId
