@@ -22,19 +22,17 @@ class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($price->equals($article->basePrice()));
     }
 
-    /*
     public function testOptionCanBeSet()
     {
         $price = new Money(1, new Currency('EUR'));
 
         $option = $this->createOption();
 
-        $article = new ArticleWithOneOption($price);
+        $article = new ArticleWithOneOption(new ArticleName('Test Article'), $price);
         $article->setOption($option);
 
         $this->assertSame($option, $article->getOption());
     }
-    */
 
     public function testTotalPriceWithOneOptionCanBeRetrieved()
     {
@@ -102,7 +100,7 @@ class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
         $option4 = $this->createOption();
         $option4->method('price')->willReturn(new Money(4, new Currency('EUR')));
         $article = new ArticleWithMultipleOptions(
-            new ArticleName('Test'),
+            new ArticleName('Test Article'),
             new Money(1, new Currency('EUR')),
             $option1
         );
@@ -117,7 +115,7 @@ class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
     {
         $option = $this->createOption();
         $article = new ArticleWithMultipleOptions(
-            new ArticleName('Test'),
+            new ArticleName('Test Article'),
             new Money(1, new Currency('EUR')),
             $option
         );

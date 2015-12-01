@@ -9,8 +9,14 @@ class ArticleNameTest extends \PHPUnit_Framework_TestCase
 {
     public function testCannotBeEmpty()
     {
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->setExpectedExceptionRegExp(\InvalidArgumentException::class, '/Minimum/');
         new ArticleName('');
+    }
+
+    public function testCannotBeShorterThan6Characters()
+    {
+        $this->setExpectedExceptionRegExp(\InvalidArgumentException::class, '/Minimum/');
+        new ArticleName('short');
     }
 
     public function testCannotBeLongerThan255Characters()
@@ -21,12 +27,12 @@ class ArticleNameTest extends \PHPUnit_Framework_TestCase
 
     public function testAcceptsNameWith255Characters()
     {
-        $name = new ArticleName('stuff');
-        $this->assertEquals('stuff', $name);
+        $name = new ArticleName('stuffffff');
+        $this->assertEquals('stuffffff', $name);
     }
 
     public function testConvertsToString()
     {
-        $this->assertEquals('test', new ArticleName('test'));
+        $this->assertEquals('testttt', new ArticleName('testttt'));
     }
 }
