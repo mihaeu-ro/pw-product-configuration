@@ -129,8 +129,10 @@ class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
      */
     private function createOption()
     {
-        return $this->getMockBuilder(Option::class)
-                       ->disableOriginalConstructor()
-                       ->getMock();
+        $optionMock = $this->getMockBuilder(Option::class)
+                        ->disableOriginalConstructor()
+                        ->getMock();
+        $optionMock->method('isCompatibleWith')->willReturn(true);
+        return $optionMock;
     }
 }

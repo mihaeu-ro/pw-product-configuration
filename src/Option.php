@@ -27,11 +27,7 @@ class Option
     {
         $this->name = $name;
         $this->price = $price;
-        if (null === $incompatibleOptions) {
-            $this->incompatibleOptions = new OptionCollection();
-        } else {
-            $this->incompatibleOptions = $incompatibleOptions;
-        }
+        $this->incompatibleOptions = $incompatibleOptions ?? new OptionCollection();
     }
 
     /**
@@ -54,6 +50,10 @@ class Option
 
     public function isCompatibleWith(OptionCollection $options) : bool
     {
+        if (0 === count($options) || 0 === count($this->incompatibleOptions)) {
+            return true;
+        }
+
         /** @var Option $option */
         foreach ($options as $option) {
             /** @var Option $incompatibleOption */
