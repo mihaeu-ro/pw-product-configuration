@@ -37,7 +37,17 @@ class OptionTest extends \PHPUnit_Framework_TestCase
         $options = new OptionCollection();
         $options->addOption(new Option(new OptionName('test1'), $this->createMoney()));
         $options->addOption(new Option(new OptionName('test2'), $this->createMoney()));
-        $options->addOption(new Option(new OptionName('test3'), $this->createMoney()));
         $this->assertFalse($option->isCompatibleWith($options));
+    }
+
+    public function testChecksForCompatibleOptions()
+    {
+        $incompatibleOptions = new OptionCollection();
+        $incompatibleOptions->addOption(new Option(new OptionName('someOtherOption'), $this->createMoney()));
+        $option = new Option(new OptionName('test'), $this->createMoney(), $incompatibleOptions);
+
+        $options = new OptionCollection();
+        $options->addOption(new Option(new OptionName('test1'), $this->createMoney()));
+        $this->assertTrue($option->isCompatibleWith($options));
     }
 }

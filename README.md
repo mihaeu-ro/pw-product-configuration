@@ -19,7 +19,7 @@ Dabei gelten die folgenden Geschäftsregeln:
   Optionen, Artikel mit maximal einer Option und Artikel mit
   mindestens einer und höchstens drei Optionen
 
-✗ bestimmte Optionen sind nicht miteinander kombinierbar
+✓ bestimmte Optionen sind nicht miteinander kombinierbar
 
 ✗ normalerweise sind Optionen jeweils nur auf bestimmte Artikel
   anwendbar; bestimmte Optionen wie Garantieverlängerungen oder
