@@ -3,7 +3,7 @@
 namespace Mihaeu\ProductConfigurator;
 
 /**
- * @covers ArticleName
+ * @covers \ArticleName
  */
 class ArticleNameTest extends \PHPUnit_Framework_TestCase
 {
