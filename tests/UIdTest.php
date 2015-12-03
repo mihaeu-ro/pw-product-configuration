@@ -3,7 +3,7 @@
 namespace Mihaeu\ProductConfigurator;
 
 /**
- * @covers UId
+ * @covers Mihaeu\ProductConfigurator\UId
  */
 class UIdTest extends \PHPUnit_Framework_TestCase
 {

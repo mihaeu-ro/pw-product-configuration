@@ -3,12 +3,12 @@
 namespace Mihaeu\ProductConfigurator;
 
 /**
- * @covers ArticleWithoutOptions
- * @covers Article
- * @uses Money
- * @uses Currency
- * @uses ArticleName
- * @uses UId
+ * @covers Mihaeu\ProductConfigurator\ArticleWithoutOptions
+ * @covers Mihaeu\ProductConfigurator\Article
+ * @uses Mihaeu\ProductConfigurator\Money
+ * @uses Mihaeu\ProductConfigurator\Currency
+ * @uses Mihaeu\ProductConfigurator\ArticleName
+ * @uses Mihaeu\ProductConfigurator\UId
  */
 class ArticleWithoutOptionsTest extends \PHPUnit_Framework_TestCase
 {

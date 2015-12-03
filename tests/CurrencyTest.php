@@ -3,7 +3,7 @@
 namespace Mihaeu\ProductConfigurator;
 
 /**
- * @covers Currency
+ * @covers Mihaeu\ProductConfigurator\Currency
  */
 class CurrencyTest extends \PHPUnit_Framework_TestCase
 {

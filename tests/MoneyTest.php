@@ -3,8 +3,8 @@
 namespace Mihaeu\ProductConfigurator;
 
 /**
- * @covers Money
- * @uses Currency
+ * @covers Mihaeu\ProductConfigurator\Money
+ * @uses Mihaeu\ProductConfigurator\Currency
  */
 class MoneyTest extends \PHPUnit_Framework_TestCase
 {

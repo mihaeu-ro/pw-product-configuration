@@ -3,7 +3,7 @@
 namespace Mihaeu\ProductConfigurator;
 
 /**
- * @covers OptionCollection
+ * @covers Mihaeu\ProductConfigurator\OptionCollection
  */
 class OptionCollectionTest extends \PHPUnit_Framework_TestCase
 {

@@ -14,6 +14,7 @@ class ArticleWithOneOption extends Article
      */
     public function setOption(Option $option)
     {
+        $this->ensureCompatibleWithArticle($option);
         $this->option = $option;
     }
 

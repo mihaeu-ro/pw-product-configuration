@@ -2,6 +2,9 @@
 
 namespace Mihaeu\ProductConfigurator;
 
+/**
+ * @covers Mihaeu\ProductConfigurator\OptionName
+ */
 class OptionNameTest extends \PHPUnit_Framework_TestCase
 {
     public function testAcceptsGoodName()

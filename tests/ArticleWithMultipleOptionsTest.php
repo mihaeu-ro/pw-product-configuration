@@ -3,12 +3,13 @@
 namespace Mihaeu\ProductConfigurator;
 
 /**
- * @covers ArticleWithMultipleOptions
- * @covers Article
- * @uses Money
- * @uses Currency
- * @uses ArticleName
- * @uses UId
+ * @covers Mihaeu\ProductConfigurator\ArticleWithMultipleOptions
+ * @covers Mihaeu\ProductConfigurator\Article
+ * @uses Mihaeu\ProductConfigurator\Money
+ * @uses Mihaeu\ProductConfigurator\Currency
+ * @uses Mihaeu\ProductConfigurator\ArticleName
+ * @uses Mihaeu\ProductConfigurator\UId
+ * @uses Mihaeu\ProductConfigurator\OptionCollection
  */
 class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
 {
@@ -28,10 +29,8 @@ class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
 
         $option = $this->createOption();
 
-        $article = new ArticleWithOneOption(new ArticleName('Test Article'), $price);
-        $article->setOption($option);
-
-        $this->assertSame($option, $article->getOption());
+        $article = new ArticleWithMultipleOptions(new ArticleName('Test Article'), $price, $option);
+        $this->assertSame($option, $article->options()->toArray()[0]);
     }
 
     public function testTotalPriceWithOneOptionCanBeRetrieved()
@@ -51,6 +50,7 @@ class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
     {
         $optionPrice1 = $this->createMoney();
         $optionPrice2 = $this->createMoney();
+
         $basePrice = $this->createMoney();
 
         $option1 = $this->createOption();

@@ -41,9 +41,15 @@ class ArticleWithMultipleOptions extends Article
     {
         $this->ensureOptionIsNotAlreadyPresent($option);
         $this->ensureMaximumNumberOfOptionsIsNotExceeded();
-        $this->ensureOptionsAreCompatible($option);
+        $this->ensureOptionsAreCompatibleWithOtherOptions($option);
+        $this->ensureCompatibleWithArticle($option);
 
         $this->options->addOption($option);
+    }
+
+    public function options() : OptionCollection
+    {
+        return $this->options;
     }
 
     private function ensureOptionIsNotAlreadyPresent($option)
@@ -60,7 +66,7 @@ class ArticleWithMultipleOptions extends Article
         }
     }
 
-    private function ensureOptionsAreCompatible(Option $option)
+    private function ensureOptionsAreCompatibleWithOtherOptions(Option $option)
     {
         if (false === $option->isCompatibleWith($this->options)) {
             throw new \InvalidArgumentException(

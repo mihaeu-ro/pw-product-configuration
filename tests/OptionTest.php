@@ -3,10 +3,11 @@
 namespace Mihaeu\ProductConfigurator;
 
 /**
- * @covers Option
- * @uses Money
- * @uses Currency
- * @uses OptionCollection
+ * @covers Mihaeu\ProductConfigurator\Option
+ * @uses Mihaeu\ProductConfigurator\Money
+ * @uses Mihaeu\ProductConfigurator\Currency
+ * @uses Mihaeu\ProductConfigurator\OptionCollection
+ * @uses Mihaeu\ProductConfigurator\OptionName
  */
 class OptionTest extends \PHPUnit_Framework_TestCase
 {
