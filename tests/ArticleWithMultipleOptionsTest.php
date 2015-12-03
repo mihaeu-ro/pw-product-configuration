@@ -141,6 +141,18 @@ class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
         $article->addOption($option2);
     }
 
+    public function testDetectsWhenOptionNotCompatibleWithArticle()
+    {
+        $this->setExpectedExceptionRegExp(\InvalidArgumentException::class, '/Option.*not compatible/');
+        $option = $this->getMockBuilder(Option::class)->disableOriginalConstructor()->getMock();
+        $option->method('name')->willReturn('bad');
+        $article = new ArticleWithMultipleOptions(
+            new ArticleName('Test Article'),
+            new Money(1, new Currency('EUR')),
+            $option
+        );
+    }
+
     /**
      * @return \PHPUnit_Framework_MockObject_MockObject|Option
      */
@@ -149,6 +161,7 @@ class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
         $optionMock = $this->getMockBuilder(Option::class)
                         ->disableOriginalConstructor()
                         ->getMock();
+        $optionMock->method('name')->willReturn('Zusatzleistungen');
         $optionMock->method('isCompatibleWith')->willReturn(true);
         return $optionMock;
     }

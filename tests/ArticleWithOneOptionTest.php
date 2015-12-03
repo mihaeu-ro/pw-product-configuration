@@ -53,9 +53,11 @@ class ArticleWithOneOptionTest extends \PHPUnit_Framework_TestCase
      */
     private function createOption()
     {
-        return $this->getMockBuilder(Option::class)
+        $optionMock = $this->getMockBuilder(Option::class)
                        ->disableOriginalConstructor()
                        ->getMock();
+        $optionMock->method('name')->willReturn('Zusatzleistungen');
+        return $optionMock;
     }
 
     public function testPrintsDetails()

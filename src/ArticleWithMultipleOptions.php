@@ -14,11 +14,17 @@ class ArticleWithMultipleOptions extends Article
      * @param ArticleName $name
      * @param Money $basePrice
      * @param Option $option
+     * @param array $compatibleOptions
      */
-    public function __construct(ArticleName $name, Money $basePrice, Option $option)
-    {
-        parent::__construct($name, $basePrice);
+    public function __construct(
+        ArticleName $name,
+        Money $basePrice,
+        Option $option,
+        array $compatibleOptions = []
+    ) {
+        parent::__construct($name, $basePrice, $compatibleOptions);
 
+        $this->ensureCompatibleWithArticle($option);
         $this->options = new OptionCollection();
         $this->options->addOption($option);
     }
@@ -70,19 +76,19 @@ class ArticleWithMultipleOptions extends Article
     {
         if (false === $option->isCompatibleWith($this->options)) {
             throw new \InvalidArgumentException(
-                'Option '.$option->name().' is not compatible '.
-                'with some of the already added options ('.$this->options.')'
+                'Option ' . $option->name() . ' is not compatible ' .
+                'with some of the already added options (' . $this->options . ')'
             );
         }
     }
 
     public function __toString() : string
     {
-        $output = 'base: '.$this->basePrice();
+        $output = 'base: ' . $this->basePrice();
         for ($i = 0; $i < count($this->options->toArray()); ++$i) {
-            $output .= PHP_EOL.'option'.($i + 1).': '.$this->options->toArray()[$i];
+            $output .= PHP_EOL . 'option' . ($i + 1) . ': ' . $this->options->toArray()[$i];
         }
-        $output .= PHP_EOL.'total: '.$this->totalPrice();
+        $output .= PHP_EOL . 'total: ' . $this->totalPrice();
         return $output;
     }
 }

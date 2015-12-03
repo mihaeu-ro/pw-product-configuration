@@ -71,7 +71,7 @@ abstract class Article
 
     protected function ensureCompatibleWithArticle(Option $option)
     {
-        if (in_array($option->name(), $this->compatibleOptions)) {
+        if (!in_array($option->name(), $this->compatibleOptions)) {
             throw new \InvalidArgumentException('Option '.$option.' not compatible with article');
         }
     }
