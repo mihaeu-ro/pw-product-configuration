@@ -6,6 +6,7 @@ namespace Mihaeu\ProductConfigurator;
  * @covers Option
  * @uses Money
  * @uses Currency
+ * @uses OptionCollection
  */
 class OptionTest extends \PHPUnit_Framework_TestCase
 {
@@ -15,7 +16,7 @@ class OptionTest extends \PHPUnit_Framework_TestCase
     {
         $price = $this->createMoney();
 
-        $option = new Option($price);
+        $option = new Option(new OptionName('test'), $price);
 
         $this->assertTrue($price->equals($option->price()));
     }
@@ -23,7 +24,20 @@ class OptionTest extends \PHPUnit_Framework_TestCase
     public function testPrintsPrice()
     {
         $price = $this->createMoney();
-        $option = new Option($price);
+        $option = new Option(new OptionName('test'), $price);
         $this->assertEquals($price->__toString(), $option->__toString());
+    }
+
+    public function testDoesNotAcceptIncompatibleOptions()
+    {
+        $incompatibleOptions = new OptionCollection();
+        $incompatibleOptions->addOption(new Option(new OptionName('test1'), $this->createMoney()));
+        $option = new Option(new OptionName('test'), $this->createMoney(), $incompatibleOptions);
+
+        $options = new OptionCollection();
+        $options->addOption(new Option(new OptionName('test1'), $this->createMoney()));
+        $options->addOption(new Option(new OptionName('test2'), $this->createMoney()));
+        $options->addOption(new Option(new OptionName('test3'), $this->createMoney()));
+        $this->assertFalse($option->isCompatibleWith($options));
     }
 }
