@@ -124,6 +124,23 @@ class ArticleWithMultipleOptionsTest extends \PHPUnit_Framework_TestCase
         $article->addOption($option);
     }
 
+    public function testDetectsWhenOptionsAreNotCompatible()
+    {
+        $this->setExpectedExceptionRegExp(\InvalidArgumentException::class, '/Option.*is not compatible/');
+
+        $option = $this->createOption();
+        $article = new ArticleWithMultipleOptions(
+            new ArticleName('Test Article'),
+            new Money(1, new Currency('EUR')),
+            $option
+        );
+        $option2 = $this->getMockBuilder(Option::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $option2->method('isCompatibleWith')->willReturn(false);
+        $article->addOption($option2);
+    }
+
     /**
      * @return \PHPUnit_Framework_MockObject_MockObject|Option
      */
