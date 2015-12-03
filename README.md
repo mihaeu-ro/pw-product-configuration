@@ -21,7 +21,7 @@ Dabei gelten die folgenden Geschäftsregeln:
 
 ✓ bestimmte Optionen sind nicht miteinander kombinierbar
 
-✗ normalerweise sind Optionen jeweils nur auf bestimmte Artikel
+✓ normalerweise sind Optionen jeweils nur auf bestimmte Artikel
   anwendbar; bestimmte Optionen wie Garantieverlängerungen oder
   Zusatzleistungen können jedoch auf alle Artikel angewendet
   werden, sofern diese generell Optionen zulassen
