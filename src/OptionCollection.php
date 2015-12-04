@@ -4,7 +4,9 @@ namespace Mihaeu\ProductConfigurator;
 
 class OptionCollection implements \IteratorAggregate, \Countable
 {
-    /** @var Option[] */
+    /**
+     * @var Option[]
+     */
     private $options = [];
 
     public function getIterator() : \ArrayIterator

@@ -6,6 +6,7 @@ class OptionName
 {
     const MIN_LENGTH = 3;
     const MAX_LENGTH = 255;
+
     /**
      * @var string
      */

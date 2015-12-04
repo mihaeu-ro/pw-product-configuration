@@ -20,7 +20,7 @@ abstract class Article
     private $uid;
 
     /**
-     * @var OptionCollection
+     * @var string[]
      */
     private $compatibleOptions = [
         'Garantieverlängerungen',
