@@ -49,5 +49,5 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 
 # run tests
-vendor/bin/phpunit -c phpunit.xml.dist --testdox
+php phpunit.phar -c phpunit.xml.dist --testdox
 ```
